@@ -13,6 +13,7 @@ FROM alpine:3.12
 COPY --from=installer /usr/bin/rclone /usr/bin/rclone
 RUN adduser -D rclone && \
     mkdir -p /home/rclone/.config/rclone && \
+    touch /rclone.conf && \
     ln -s /rclone.conf /home/rclone/.config/rclone/rclone.conf && \
     chown -R rclone:rclone /home/rclone
 USER rclone
