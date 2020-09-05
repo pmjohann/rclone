@@ -1,4 +1,4 @@
-FROM alpine:3.11 AS installer
+FROM alpine:3.12 AS installer
 RUN apk add curl zip && \
     curl -sS -O https://downloads.rclone.org/rclone-current-linux-amd64.zip && \
     unzip rclone-current-linux-amd64.zip && \
@@ -9,7 +9,7 @@ RUN apk add curl zip && \
 
 ########## ########## ##########
 
-FROM alpine:3.11
+FROM alpine:3.12
 COPY --from=installer /usr/bin/rclone /usr/bin/rclone
 RUN adduser -D rclone
 USER rclone
