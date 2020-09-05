@@ -3,5 +3,5 @@
 ## Usage
 
 ```
-docker run --rm -it -v ~/.config/rclone:/home/rclone/.config/rclone pmjohann/rclone
+docker run --rm -it -v /path/to/rclone.conf:/rclone.conf pmjohann/rclone
 ```
